@@ -35,6 +35,13 @@ class BfhlControllerTest {
     }
 
     @Test
+    void testHealthEndpoint() throws Exception {
+        mockMvc.perform(get("/health"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.status", is("UP")));
+    }
+
+    @Test
     void testPostEndpointWithExampleA() throws Exception {
         BfhlRequest request = BfhlRequest.builder()
                 .data(List.of("a", "1", "334", "4", "R", "$"))

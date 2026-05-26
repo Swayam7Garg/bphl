@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/bfhl")
 @CrossOrigin(origins = "*")
 public class BfhlController {
 
@@ -19,14 +18,19 @@ public class BfhlController {
         this.bfhlService = bfhlService;
     }
 
-    @PostMapping
+    @PostMapping("/bfhl")
     public ResponseEntity<BfhlResponse> handlePost(@RequestBody BfhlRequest request) {
         BfhlResponse response = bfhlService.processRequest(request);
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping
+    @GetMapping("/bfhl")
     public ResponseEntity<Map<String, Integer>> handleGet() {
         return ResponseEntity.ok(Map.of("operation_code", 1));
+    }
+
+    @GetMapping("/health")
+    public ResponseEntity<Map<String, String>> handleHealth() {
+        return ResponseEntity.ok(Map.of("status", "UP"));
     }
 }
