@@ -6,7 +6,7 @@ This repository contains the Java Spring Boot REST API solution built for the Ba
 - **Name:** Swayam Garg
 - **College Roll Number:** 0827CD231067
 - **Email:** swayamgarg231225@acropolis.in
-- **DOB:** 13/01/2005
+  
 
 ## Features
 - **POST `/bfhl`**:
