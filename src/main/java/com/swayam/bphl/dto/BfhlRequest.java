@@ -1,8 +1,10 @@
 package com.swayam.bphl.dto;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import java.util.List;
 
 public class BfhlRequest {
+    @JsonAlias({"data", "Data", "DATA"})
     private List<String> data;
 
     public BfhlRequest() {
